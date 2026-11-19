@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="search-tag-list.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            },
+            "bindings": {
+                "selectedTag": {"<-": "@repetition.selection.0"}
+            }
+        },
+        "repetition": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "repetition"},
+                "isSelectionEnabled": true
+            },
+            "bindings": {
+                "content": {"<-": "@owner.tags"}
+            }
+        },
+        "tag": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "tag"}
+            },
+            "bindings": {
+                "value": {"<-": "@repetition:iteration.object"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="SearchTagList">
+        <div data-montage-id="repetition" class="SearchTagList-repetition">
+            <div data-montage-id="tag" class="SearchTagList-tag"></div>
+        </div>
+    </div>
+</body>
+</html>

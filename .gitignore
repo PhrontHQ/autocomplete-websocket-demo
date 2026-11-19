@@ -1,0 +1,65 @@
+### General ###
+.DS_Store
+Thumbs.db
+report/
+out/
+temp/
+tmp/
+.tmp
+*.tmp
+*.tmp.*
+log.txt
+*.log
+
+## jsdoc
+/doc
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Windows ###
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+### SublimeText ###
+*.sublime-project
+*.sublime-workspace
+
+### Intellij IDE ###
+.idea/
+atlassian-ide-plugin.xml
+
+### VisualStudioCode ###
+#.vscode/*
+.vscode-upload.json
+.eslintrc.json
+
+### TextMate ###
+*.tmproj
+*.tmproject
+tmtags
+
+### Node ###
+npm-debug.log*
+.npmignore
+/node_modules/

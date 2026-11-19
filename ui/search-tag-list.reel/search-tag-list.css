@@ -1,0 +1,23 @@
+.SearchTagList {
+    position: relative;
+    border: 1px solid black;
+    padding: 20px;
+    height: 38px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.SearchTagList-tag {
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    line-height: 38px;
+    padding: 0 13px;
+    margin-left: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    display: inline-block;
+    background: #aaa;
+    color: white;
+    border-radius: 9px;
+    cursor: pointer;
+}

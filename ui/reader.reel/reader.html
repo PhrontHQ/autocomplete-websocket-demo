@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="reader.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"},
+                "articleElement": {"#": "article"},
+                "titleElement": {"#": "title"},
+                "contentElement": {"#": "content"}
+            }
+        },
+        "close": {
+            "prototype": "ui/button.reel",
+            "properties": {
+                "element": {"#": "close"}
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "listener": {"@": "owner"}
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="Reader">
+        <div data-montage-id="close" class="Reader-close">X</div>
+        <div data-montage-id="article" class="Reader-article">
+            <h1 data-montage-id="title" class="Reader-title"></h1>
+            <div data-montage-id="content" class="Reader-content"></div>
+        </div>
+        <div class="Reader-share"></div>
+        <div class="Reader-footer">
+            <div class="Reader-options"></div>
+            <div class="Reader-hate"></div>
+            <div class="Reader-love"></div>
+            <div class="Reader-collections"></div>
+            <div class="Reader-add"></div>
+        </div>
+    </div>
+</body>
+</html>

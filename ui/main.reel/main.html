@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Main</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/montage-serialization">
+        {
+            "owner": {
+                "properties": {
+                    "element": {"#": "main"},
+                    "reader": {"@": "reader"}
+                },
+                "bindings": {
+                    "searchTerm": {"<-": "@searchBox.term"},
+                    "searchTags": {"<-": "@searchBox.tags"},
+                    "selectedArticle": {"<->": "@articleList.selected"}
+                }
+            },
+            "searchBox": {
+                "prototype": "ui/search-box.reel",
+                "properties": {
+                    "element": {"#": "searchBox"}
+                }
+            },
+            "searchTagList": {
+                "prototype": "ui/search-tag-list.reel",
+                "properties": {
+                    "element": {"#": "searchTagList"}
+                },
+                "bindings": {
+                    "tags": {"<-": "@owner.tags"},
+                    "selectedTags": {"<->": "@searchBox.tags"}
+                }
+            },
+            "articleList": {
+                "prototype": "ui/article-list.reel",
+                "properties": {
+                    "element": {"#": "articleList"}
+                },
+                "bindings": {
+                    "articles": {"<-": "@owner.articles"}
+                }
+            },
+            "reader": {
+                "prototype": "ui/reader.reel",
+                "properties": {
+                    "element": {"#": "reader"}
+                },
+                "bindings": {
+                    "article": {"<->": "@owner.article"}
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div data-montage-id="main">
+        <div data-montage-id="reader" class="Main-reader"></div>
+        <div data-montage-id="searchBox" class="Main-searchBox"></div>
+        <div data-montage-id="searchTagList" class="Main-searchTagList"></div>
+        <div data-montage-id="articleList" class="Main-articleList"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="search-box.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"},
+                "textFieldElement": {"#": "textField"},
+                "autocompleteLeft": {"@": "autocompleteLeft"},
+                "autocompleteRight": {"@": "autocompleteRight"}
+            },
+            "bindings": {
+                "selectedTag": {"<-": "@tagsRepetition.selection.0"}
+            }
+        },
+        "autocompleteLeft": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "autocompleteLeft"}
+            }
+        },
+        "autocompleteRight": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "autocompleteRight"}
+            }
+        },
+        "tagsRepetition": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "tagsRepetition"},
+                "isSelectionEnabled": true
+            },
+            "bindings": {
+                "content": {"<-": "@owner.tags"}
+            }
+        },
+        "tag": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "tag"}
+            },
+            "bindings": {
+                "value": {"<-": "@tagsRepetition:iteration.object"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="SearchBox">
+        <div data-montage-id="queryWrapper" class="SearchBox-queryWrapper">
+            <input data-montage-id="textField" class="SearchBox-textField">
+            <div data-montage-id="autocomplete" class="SearchBox-autocomplete">
+                <span data-montage-id="autocompleteLeft" class="SearchBox-hidden"></span><!--
+                --><span data-montage-id="autocompleteRight"></span>
+            </div>
+            <div data-montage-id="tagsRepetition" class="SearchBox-tagsRepetition">
+                <div data-montage-id="tag" class="SearchBox-tag"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

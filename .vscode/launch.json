@@ -1,0 +1,47 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "1. npm install",
+            "runtimeVersion": "24", // If i need to run node 4.8.7
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npm",
+            "preLaunchTask": "Clear npm install",
+            "runtimeArgs": [
+                "install"
+            ],
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "2. Launch HTTP (8080) & WebSocket Server",
+            "runtimeVersion": "24",
+            "runtimeArgs": [
+                "--preserve-symlinks",
+                "--inspect",
+                "--trace-warnings",
+                // "--prof",
+                "--expose-internals",
+                "${workspaceFolder}/server/server.js"
+            ],
+            "trace": true,
+            "enableContentValidation": false,
+            "env": {
+                "SIMULATED_NETWORK_LATENCY": "0",
+                "TIME_START": true,
+                "TIME_PG": true
+            }
+            // "skipFiles": [
+            //     "<node_internals>/**"
+            // ]
+        }
+    ]
+}

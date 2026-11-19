@@ -1,0 +1,17 @@
+.ArticleList {
+    position: relative;
+    border: 1px solid black;
+    overflow: auto;
+}
+
+.ArticleList-article {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 19px;
+    line-height: 60px;
+    padding: 0 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+    cursor: pointer;
+}

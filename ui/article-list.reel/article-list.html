@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="article-list.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            },
+            "bindings": {
+                "selected": {"<->": "@repetition.selection.0"}
+            }
+        },
+        "repetition": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "repetition"},
+                "isSelectionEnabled": true
+            },
+            "bindings": {
+                "content": {"<-": "@owner.articles"}
+            }
+        },
+        "article": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "article"}
+            },
+            "bindings": {
+                "value": {"<-": "@repetition:iteration.object.title"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="ArticleList">
+        <div data-montage-id="repetition">
+            <div data-montage-id="article" class="ArticleList-article"></div>
+        </div>
+    </div>
+</body>
+</html>
